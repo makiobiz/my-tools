@@ -1,0 +1,40 @@
+@charset "utf-8"
+
+// dependency - __mix-media-query.scss
+
+$_mobile_coefficient: 2
+$_tablet_coefficient: 1.5
+
+=mix-has-pt($_height-args...)
+
+  @if (length($_height-args) == 1)
+    $_height: nth($_height-args, 1)
+    padding-top: $_height / $_mobile_coefficient
+    +mix-mq-tablet
+      padding-top: $_height / $_tablet_coefficient
+    +mix-mq-pc
+      padding-top: $_height
+
+  @if (length($_height-args) == 3)
+    padding-top: nth($_height-args, 1)
+    +mix-mq-tablet
+      padding-top: nth($_height-args, 2)
+    +mix-mq-pc
+      padding-top: nth($_height-args, 3)
+
+=mix-has-pb($_height-args...)
+
+  @if (length($_height-args) == 1)
+    $_height: nth($_height-args, 1)
+    padding-bottom: $_height / $_mobile_coefficient
+    +mix-mq-tablet
+      padding-bottom: $_height / $_tablet_coefficient
+    +mix-mq-pc
+      padding-bottom: $_height
+      
+  @if (length($_height-args) == 3)
+    padding-bottom: nth($_height-args, 1)
+    +mix-mq-tablet
+      padding-bottom: nth($_height-args, 2)
+    +mix-mq-pc
+      padding-bottom: nth($_height-args, 3)

@@ -1,0 +1,110 @@
+@charset "utf-8"
+
+// dependency - __mix-media-query.sass
+
+// 主に文章のところで有効。ボタンなどの「単語」は別扱いの方がいいか も
+// アプリケーションを全体の統一感を保つ
+// 時間短縮 
+
+=mix-has-fz($_fz-args...)
+
+  @if (length($_fz-args) == 1)
+
+    $_fz: nth($_fz-args, 1)
+
+    // 14
+    @if $_fz == 14px
+      // @debug $_fz
+      font-size: 12px
+      +mix-mq-tablet
+        font-size: 12px
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 18
+    @if $_fz == 18px
+      font-size: 14px
+      +mix-mq-tablet
+        font-size: 16px
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 20
+    @if $_fz == 20px
+      font-size: 16px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 22
+    @if $_fz == 22px
+      font-size: 16px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 24
+    @if $_fz == 24px
+      font-size: 18px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 26
+    @if $_fz == 26px
+      font-size: 20px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 30
+    @if $_fz == 30px
+      font-size: 22px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 32
+    @if $_fz == 32px
+      font-size: 22px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 36
+    @if $_fz == 36px
+      font-size: 26px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 40
+    @if $_fz == 40px
+      font-size: 26px
+      +mix-mq-tablet
+        font-size: $_fz
+      +mix-mq-pc
+        font-size: $_fz
+
+    // 48
+    @if $_fz == 48px
+      font-size: 26px
+      +mix-mq-tablet
+        font-size: 38px
+      +mix-mq-pc
+        font-size: $_fz
+
+  @if (length($_fz-args) == 3)
+
+    font-size: nth($_fz-args, 1)
+    +mix-mq-tablet
+      font-size: nth($_fz-args, 2)
+    +mix-mq-pc
+      font-size: nth($_fz-args, 3)
